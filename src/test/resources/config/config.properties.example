@@ -1,0 +1,6 @@
+# Make a config.properties file in this directory content
+site=http://automationpractice.com/index.php
+chromedriver=/directory/of/chromedriver
+firefoxdriver=/location/of/geckodriver
+#Options: chrome, firefox
+browser=chrome
