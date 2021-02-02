@@ -41,11 +41,6 @@ public class Nav extends BasePage {
 	}
 
 	public static void main(String[] args) {
-//		Nav el = new Nav();
-//		el.clickNavImgLink();
-//		System.out.println(el.getPhoneNumber());
-//		el.clickContactLink();
-//		el.clickSignInLink();
-//		el.endSession();
+
 	}
 }

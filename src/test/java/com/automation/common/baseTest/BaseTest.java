@@ -4,22 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
 import com.automation.common.driver.DriverBuilder;
+import com.automation.common.driver.DriverProvider;
 
 public class BaseTest {
 	private WebDriver driver;
 	
 	public BaseTest() {
-		this.driver = DriverBuilder.newDriver()
-								   .useBaseBrowser()
-								   .build();
+		this.driver = DriverProvider.createDriver();
 	}
-	
-//	public BaseTest(String slug) {
-//		this.driver = DriverBuilder.newDriver()
-//								   .useBaseBrowser()
-//								   .getBaseURLwithSlug(slug)
-//								   .build();
-//	}
 	
 	public WebDriver getDriver() {
 		return this.driver;

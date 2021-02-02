@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 import com.automation.common.driver.DriverBuilder;
+import com.automation.common.driver.DriverProvider;
 import com.automation.pageObjects.base.BasePage;
 import com.automation.pageObjects.components.Nav;
 
@@ -25,7 +26,7 @@ public class HomePage extends BasePage {
 	}
 	
 	public static void main(String[] args) {
-		WebDriver driver = DriverBuilder.newDriver().useBaseBrowser().build();
+		WebDriver driver = DriverProvider.createDriver();
 		HomePage hp = new HomePage(driver);
 		hp.clickOnHomePageBanner();
 	}

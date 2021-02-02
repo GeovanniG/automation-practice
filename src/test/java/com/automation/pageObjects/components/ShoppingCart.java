@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 import com.automation.common.driver.DriverBuilder;
+import com.automation.common.driver.DriverProvider;
 import com.automation.pageObjects.base.BasePage;
 
 public class ShoppingCart extends BasePage {
@@ -41,7 +42,7 @@ public class ShoppingCart extends BasePage {
 	}
 	
 	public static void main(String[] args) {
-		WebDriver driver = DriverBuilder.newDriver().useBaseBrowser().build();
+		WebDriver driver = DriverProvider.createDriver();
 		ShoppingCart shoppingCart = new ShoppingCart(driver);
 		shoppingCart.setPageLocationAsBaseURL();
 		//	Actions actions = new Actions(driver);
