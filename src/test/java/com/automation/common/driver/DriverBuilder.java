@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.automation.utilities.Config;
+import com.automation.utilities.Config.Browser;
 
 public class DriverBuilder {
 	private DriverBuilder() {}
@@ -50,9 +51,9 @@ public class DriverBuilder {
 		}
 		
 		public BuildStep useBaseBrowser() {
-			String baseBrowser = this.configs.getBrowser();
-			if (baseBrowser.equalsIgnoreCase("chrome")) return useChromeBrowser();
-			else if (baseBrowser.equalsIgnoreCase("firefox")) return useFirefoxBrowser();
+			Browser baseBrowser = this.configs.getBrowser();
+			if (baseBrowser == Browser.CHROME) return useChromeBrowser();
+			else if (baseBrowser == Browser.FIREFOX) return useFirefoxBrowser();
 			// output to logs a message, i.e. using chrome as default
 			return useChromeBrowser();
 		}

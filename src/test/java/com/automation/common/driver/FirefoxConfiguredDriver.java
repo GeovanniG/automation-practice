@@ -5,7 +5,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.automation.utilities.Config;
 
-public class FirefoxConfiguredDriver implements Driver {
+public class FirefoxConfiguredDriver implements ConfiguredDriver {
 	private Config configs = new Config();
 	private WebDriver driverType;
 	
@@ -15,9 +15,8 @@ public class FirefoxConfiguredDriver implements Driver {
 		this.driverType = new FirefoxDriver();
 	}
 
-	public WebDriver createDriver() {
-		// TODO Auto-generated method stub
-		return null;
+	public WebDriver getDriver() {
+		return this.driverType;
 	}
 
 }

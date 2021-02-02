@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import com.automation.utilities.Config;
 
-public class ChromeConfiguredDriver implements Driver {
+public class ChromeConfiguredDriver implements ConfiguredDriver {
 	private Config configs = new Config();
 	private WebDriver driverType;
 	
@@ -15,8 +15,7 @@ public class ChromeConfiguredDriver implements Driver {
 		this.driverType = new ChromeDriver();
 	}
 	
-	public WebDriver createDriver() {
-		// TODO Auto-generated method stub
-		return null;
+	public WebDriver getDriver() {
+		return this.driverType;
 	}
 }

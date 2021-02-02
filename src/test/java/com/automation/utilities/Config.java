@@ -17,6 +17,11 @@ public class Config {
 		}
 	}
 	
+	public enum Browser {
+		CHROME,
+		FIREFOX
+	}
+	
 	public String getSite() {
 		String url = this.props.getProperty("site");
 		return url;
@@ -32,8 +37,20 @@ public class Config {
 		return driverLoc;
 	}
 	
-	public String getBrowser() {
-		String browser = this.props.getProperty("browser");
+	public Browser getBrowser() {
+		String propsBrowser = this.props.getProperty("browser").toLowerCase();
+		Browser browser;
+		switch (propsBrowser) {
+			case "firefox":
+				browser = Browser.FIREFOX;
+				break;
+			case "chrome":
+				browser = Browser.CHROME;
+				break;
+			default:
+				System.out.println("Incorrect browser specified. Throw error");
+				browser = null;
+		}
 		return browser;
 	}
 	
