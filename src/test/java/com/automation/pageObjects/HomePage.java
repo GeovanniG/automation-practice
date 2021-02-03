@@ -1,6 +1,7 @@
 package com.automation.pageObjects;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.automation.common.driver.DriverBuilder;
@@ -17,17 +18,37 @@ public class HomePage extends BasePage {
 		this.nav = new Nav(driver);	
 	}
 	
-	public void clickOnHomePageBanner() {
-		this.nav.clickNavImgLink();
+	@FindBy(css = ".homefeatured")
+	private WebElement popularSortingTab;
+	
+	
+	@FindBy(css = ".blockbestsellers")
+	private WebElement bestSellersSortingTab;
+	
+	@FindBy(css = ".homefeatured li")
+	private List<WebElement> popularProducts;
+	
+	
+	public Nav getNav() {
+		return this.nav;
 	}
 	
 	public String getHomePageURL() {
 		return super.getPageURL();
 	}
 	
+	public void clickPopularSortingTab() {
+		popularSortingTab.click();
+	}
+	
+	public void clickBestSellersSortingTab() {
+		bestSellersSortingTab.click();
+	}
+	
 	public static void main(String[] args) {
 		WebDriver driver = DriverProvider.createDriver();
 		HomePage hp = new HomePage(driver);
-		hp.clickOnHomePageBanner();
+		hp.clickBestSellersSortingTab();
+		hp.clickPopularSortingTab();
 	}
 }
