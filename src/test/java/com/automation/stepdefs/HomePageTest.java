@@ -24,7 +24,7 @@ public class HomePageTest extends BaseTest {
 	@Given("I click homepage banner")
 	public void i_click_homepage_banner() {
 	    // Write code here that turns the phrase above into concrete actions
-		this.homepage.clickOnHomePageBanner();
+//		this.homepage.clickOnHomePageBanner();
 	}
 
 	@Then("I remain on homepage")

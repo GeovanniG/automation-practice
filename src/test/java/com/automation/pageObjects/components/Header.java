@@ -14,10 +14,12 @@ import com.automation.pageObjects.base.BasePage;
 
 public class Header extends BasePage {
 	private WebDriver driver;
+	private ShoppingCart cart;
 	
 	public Header(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
+		this.cart = new ShoppingCart(driver);
 	}
 	
 	@FindBy(css = "#header_logo")
@@ -31,6 +33,10 @@ public class Header extends BasePage {
 	
 	@FindBy(css = ".menu-content > li")
 	private List<WebElement> headerLinks;
+	
+	public ShoppingCart getShoppingCart() {
+		return this.cart;
+	}
 	
 	public void clickHeaderLogo() {
 		headerLogo.click();	
