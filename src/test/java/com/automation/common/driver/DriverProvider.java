@@ -29,10 +29,8 @@ public class DriverProvider {
 		
 	
 	public static void main(String[] args) {
-		for(Browser browser: Browser.values()) {
-			WebDriver driver = DriverProvider.createDriver();
-			driver.get("https://www.google.com/");
-			driver.quit();
-		}
+		WebDriver driver = DriverProvider.createDriver();
+		driver.get("https://www.google.com/");
+		driver.quit();
 	}
 }
